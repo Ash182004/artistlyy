@@ -20,7 +20,18 @@ export default function ArtistListingPage() {
   const [priceRange, setPriceRange] = useState('')
   
   const { artists } = useGlobalState()
-  const [filtered, setFiltered] = useState([...artistsData])
+  type Artist = {
+  id: string | number
+  name: string
+  category: string
+  priceRange: string
+  location: string
+  image: string
+  approved: boolean
+}
+
+const [filtered, setFiltered] = useState<Artist[]>([])
+
 
   // Set category from URL (only once on mount)
   useEffect(() => {
