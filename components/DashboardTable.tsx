@@ -16,7 +16,8 @@ export default function DashboardTable({ data }: { data: Artist[] }) {
 
   const handleApprove = () => {
     if (selectedArtist) {
-      approveArtist(selectedArtist.id)
+     approveArtist(String(selectedArtist.id))
+
       setSelectedArtist(null)
     }
   }
