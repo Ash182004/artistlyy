@@ -4,7 +4,7 @@ import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+
 import { useGlobalState } from '@/context/GlobalStateContext'
 
 const schema = yup.object().shape({
@@ -20,15 +20,25 @@ const categories = ['Singer', 'Dancer', 'DJ', 'Speaker']
 const languages = ['Hindi', 'English', 'Tamil', 'Punjabi']
 const feeOptions = ['₹10k - ₹30k', '₹20k - ₹50k', '₹30k - ₹60k', '₹50k+']
 
+interface ArtistFormData {
+  name: string
+  bio: string
+  category: string[]
+  languages: string[]
+  feeRange: string
+  location: string
+}
+
 export default function ArtistForm() {
   const [imagePreview, setImagePreview] = useState<string | null>(null)
   const { addArtist } = useGlobalState()
-  const router = useRouter()
+  
 
   const {
     register,
     handleSubmit,
     control,
+     reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -38,21 +48,23 @@ export default function ArtistForm() {
     },
   })
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: ArtistFormData) => {
   const newArtist = {
-    id: crypto.randomUUID(), // ✅ Assign a unique ID
+    id: crypto.randomUUID(),
     name: data.name,
-    category: data.category[0], // assuming you allow only one
+    category: data.category[0], // assuming one
     location: data.location,
     priceRange: data.feeRange,
-    image: imagePreview || "/default-image.jpg", // fallback image
+    image: imagePreview || "/default-image.jpg",
     bio: data.bio,
     languages: data.languages,
-    approved: false // ✅ Artist starts as unapproved
+    approved: false,
   }
 
   addArtist(newArtist)
   alert('Artist registered successfully!')
+  reset()
+  setImagePreview(null)
 }
 
 
