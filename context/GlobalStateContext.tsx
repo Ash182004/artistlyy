@@ -4,7 +4,7 @@ import { createContext, useContext, useState, ReactNode } from 'react'
 
 // ✅ Updated Artist interface
 interface Artist {
-  id: string
+  id: string|number
   name: string
   category: string
   location: string
