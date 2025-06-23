@@ -1,18 +1,10 @@
 'use client'
+import type { Artist } from '@/types/artist'
 
 import { useState } from 'react'
 import { useGlobalState } from '@/context/GlobalStateContext'
 
-interface Artist {
-  id: string|number
-  name: string
-  category: string
-  location: string
-  priceRange: string
-  approved: boolean
-  bio?: string
-  languages?: string[]
-}
+
 
 export default function DashboardTable({ data }: { data: Artist[] }) {
   const [selectedArtist, setSelectedArtist] = useState<Artist | null>(null)

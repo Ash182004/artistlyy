@@ -7,6 +7,7 @@ import ArtistCard from '@/components/ArtistCard'
 import FilterBlock from '@/components/FilterBlock'
 import Header from '@/components/Header'
 import { useGlobalState } from '@/context/GlobalStateContext'
+import type { Artist } from '@/types/artist'
 
 // Utility to get unique values
 const unique = (arr: string[]) => Array.from(new Set(arr))
@@ -20,15 +21,7 @@ export default function ArtistListingPage() {
   const [priceRange, setPriceRange] = useState('')
   
   const { artists } = useGlobalState()
-  type Artist = {
-  id: string | number
-  name: string
-  category: string
-  priceRange: string
-  location: string
-  image: string
-  approved: boolean
-}
+ 
 
 const [filtered, setFiltered] = useState<Artist[]>([])
 

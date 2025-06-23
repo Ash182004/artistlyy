@@ -1,17 +1,11 @@
 'use client'
 
 import { createContext, useContext, useState, ReactNode } from 'react'
+import type { Artist } from '@/types/artist'
+
 
 // ✅ Updated Artist interface
-interface Artist {
-  id: string|number
-  name: string
-  category: string
-  location: string
-  priceRange: string
-  image?: string
-  approved: boolean
-}
+
 
 // ✅ Context Type including approve/delete functions
 interface GlobalStateContextType {
