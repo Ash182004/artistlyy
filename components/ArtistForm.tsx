@@ -40,13 +40,13 @@ export default function ArtistForm() {
     control,
      reset,
     formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
-    defaultValues: {
-      category: [],
-      languages: [],
-    },
-  })
+  } = useForm<ArtistFormData>({   // ✅ Add <ArtistFormData>
+  resolver: yupResolver(schema),
+  defaultValues: {
+    category: [],
+    languages: [],
+  },
+})
 
   const onSubmit = (data: ArtistFormData) => {
   const newArtist = {
