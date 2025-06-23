@@ -7,14 +7,16 @@ import { useState } from 'react'
 
 import { useGlobalState } from '@/context/GlobalStateContext'
 
-const schema = yup.object().shape({
+const schema = yup.object({
   name: yup.string().required('Name is required'),
   bio: yup.string().required('Bio is required'),
-  category: yup.array().min(1, 'Select at least one category'),
-  languages: yup.array().min(1, 'Select at least one language'),
+  category: yup.array().of(yup.string()).min(1, 'Select at least one category').required(),
+  languages: yup.array().of(yup.string()).min(1, 'Select at least one language').required(),
   feeRange: yup.string().required('Fee range is required'),
   location: yup.string().required('Location is required'),
 })
+
+
 
 const categories = ['Singer', 'Dancer', 'DJ', 'Speaker']
 const languages = ['Hindi', 'English', 'Tamil', 'Punjabi']
