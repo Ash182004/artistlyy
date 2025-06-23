@@ -24,7 +24,8 @@ export default function DashboardTable({ data }: { data: Artist[] }) {
 
   const handleDelete = () => {
     if (selectedArtist) {
-      deleteArtist(selectedArtist.id)
+     deleteArtist(String(selectedArtist.id))
+
       setSelectedArtist(null)
     }
   }
