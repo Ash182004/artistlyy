@@ -4,9 +4,10 @@ export interface Artist {
   category: string
   priceRange: string
   location: string
-  image?: string
+  image: string // ✅ NOT optional
   approved: boolean
   bio?: string
   languages?: string[]
 }
+
 
