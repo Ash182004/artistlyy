@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "label": "Singers",
+    "value": "Singer",
+    "image": "/images/singer.png"
+  },
+  {
+    "id": 2,
+    "label": "Dancers",
+    "value": "Dancer",
+    "image": "/images/dancer.png"
+  },
+  {
+    "id": 3,
+    "label": "DJs",
+    "value": "DJ",
+    "image": "/images/dj.png"
+  },
+  {
+    "id": 4,
+    "label": "Speakers",
+    "value": "Speaker",
+    "image": "/images/speaker.png"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Arjun Verma",
+    "category": "Singer",
+    "priceRange": "₹20k - ₹50k",
+    "location": "Delhi",
+    "image": "/images/singer.png",
+     "approved": true
+  },
+  {
+    "id": 2,
+    "name": "Neha Sharma",
+    "category": "Dancer",
+    "priceRange": "₹10k - ₹30k",
+    "location": "Mumbai",
+    "image": "/images/dancer.png",
+     "approved": true
+  },
+  {
+    "id": 3,
+    "name": "Rahul Mehta",
+    "category": "DJ",
+    "priceRange": "₹30k - ₹60k",
+    "location": "Bangalore",
+    "image": "/images/dj.png",
+     "approved": true
+  },
+  {
+    "id": 4,
+    "name": "Priya Nair",
+    "category": "Speaker",
+    "priceRange": "₹15k - ₹35k",
+    "location": "Chennai",
+    "image": "/images/speaker.png",
+     "approved": true
+  }
+]
