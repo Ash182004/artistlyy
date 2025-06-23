@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation'
 
 interface Category {
-  id: number
+  id: number|string
   label: string
   value: string
   image: string

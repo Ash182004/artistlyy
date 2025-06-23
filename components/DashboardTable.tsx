@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useGlobalState } from '@/context/GlobalStateContext'
 
 interface Artist {
-  id: string
+  id: string|number
   name: string
   category: string
   location: string
